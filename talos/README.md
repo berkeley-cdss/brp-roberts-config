@@ -6,7 +6,7 @@
 
 `talosctl gen config roberts https://128.32.135.223:6443 --with-secrets secrets.yaml --config-patch @general-patch.yaml --config-patch @general-cp-patch.yaml -t controlplane --output controlplane.yaml`
 
-`talosctl gen config roberts https://?128.32.135.223:6443--with-secrets secrets.yaml --config-patch @general-patch.yaml -t worker --output worker.yaml`
+`talosctl gen config roberts https://128.32.135.223:6443 --with-secrets secrets.yaml --config-patch @general-patch.yaml -t worker --output worker.yaml`
 
 ## To generate the talosconfig to be able to run talosctl commands against the cluster:
 
