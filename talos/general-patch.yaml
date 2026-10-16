@@ -1,0 +1,23 @@
+version: v1alpha1
+machine:
+  time:
+    servers:
+      - ntp1.net.berkeley.edu
+      - ntp2.net.berkeley.edu
+cluster:
+  allowSchedulingOnControlPlanes: true
+  controllerManager:
+    extraArgs:
+      node-cidr-mask-size-ipv4: "24"
+  network:
+    podSubnets:
+      - 172.16.0.0/13
+    serviceSubnets:
+      - 172.24.0.0/16
+    cni:
+      name: none
+---
+apiVersion: v1alpha1
+kind: NetworkDefaultActionConfig
+ingress: accept
+# ingress: block

@@ -1,0 +1,25 @@
+machine:
+  network:
+    nameservers:
+      - 128.32.136.9
+      - 128.32.206.9
+      - 128.32.206.12
+      - 128.32.136.12
+    interfaces:
+      - interface: eno1 ????
+        dhcp: false
+      - interface: enp33s0np0 ?????
+        dhcp: false
+        mtu: 1500
+        addresses:
+          - 128.32.135.223/24
+        routes:
+          - network: 0.0.0.0/0
+            gateway: 128.32.135.254
+  install:
+    disk: /dev/sda ????
+---
+apiVersion: v1alpha1
+kind: HostnameConfig
+auto: off
+hostname: k8s-m-0.cdss.berkeley.edu
